@@ -49,9 +49,9 @@ while not password_correct:
             quit()
         else:
             analyze_text=(TEXTS[int(text_type)-1])
-            analyze_text.lstrip()
-            analyze_text.rstrip()
             analyze_text=analyze_text.replace("\n"," ")
+            analyze_text=analyze_text.lstrip()
+            analyze_text=analyze_text.rstrip()
             print(analyze_text)
             word_counter=(analyze_text.split(" "))
             print(f"Number of words in text is: {len(word_counter)}")
@@ -67,7 +67,6 @@ while not password_correct:
                     istittle_counter+=1
                 if word.isupper():
                     isupper_counter+=1
-                    print(word)
                 if word.islower():
                     islower_counter+=1
                 if word.isdecimal():
@@ -84,18 +83,6 @@ while not password_correct:
             for value in (unique_numbers_list):
                 amount=word_len.count(value)
                 print(f"Len: {value} ","*"*amount)
-
-
-
-
-
-
-
-
-
-
-
-
 
     else:
         print("Incorrect, Login name or password is wrong.\n Please try it again")
